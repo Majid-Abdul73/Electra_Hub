@@ -11,8 +11,8 @@ const Footer: FC = () => {
             <div className="relative">
               <input
                 type="email"
-                placeholder="your@email.ru"
-                className="w-full bg-neutral-900 px-4 py-3 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary"
+                placeholder="your@email.com"
+                className="w-full bg-neutral-900 px-4 py-3 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
               <button className="absolute right-2 top-1/2 -translate-y-1/2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -26,12 +26,12 @@ const Footer: FC = () => {
           <div className="space-y-4">
             <h4 className="text-sm text-gray-400">INFO</h4>
             <ul className="space-y-2">
-              <li><a href="/about" className="hover:text-secondary">About</a></li>
-              <li><a href="/clientele" className="hover:text-secondary">Clientele</a></li>
-              <li><a href="/blog" className="hover:text-secondary">Blog</a></li>
-              <li><a href="/newsletter" className="hover:text-secondary">Newsletter</a></li>
-              <li><a href="/testimonial" className="hover:text-secondary">Testimonial</a></li>
-              <li><a href="/services" className="hover:text-secondary">Services</a></li>
+              <li><a href="/about" className="hover:text-green-500 transition-colors">About</a></li>
+              <li><a href="/clientele" className="hover:text-green-500 transition-colors">Clientele</a></li>
+              <li><a href="/blog" className="hover:text-green-500 transition-colors">Blog</a></li>
+              <li><a href="/newsletter" className="hover:text-green-500 transition-colors">Newsletter</a></li>
+              <li><a href="/testimonial" className="hover:text-green-500 transition-colors">Testimonial</a></li>
+              <li><a href="/services" className="hover:text-green-500 transition-colors">Services</a></li>
             </ul>
           </div>
 
@@ -39,9 +39,9 @@ const Footer: FC = () => {
           <div className="space-y-4">
             <h4 className="text-sm text-gray-400">ADDITIONAL</h4>
             <ul className="space-y-2">
-              <li><a href="/upcoming" className="hover:text-secondary">Upcoming</a></li>
-              <li><a href="/trending" className="hover:text-secondary">Trending</a></li>
-              <li><a href="/due-today" className="hover:text-secondary">Due Today</a></li>
+              <li><a href="/upcoming" className="hover:text-green-500 transition-colors">Upcoming</a></li>
+              <li><a href="/trending" className="hover:text-green-500 transition-colors">Trending</a></li>
+              <li><a href="/due-today" className="hover:text-green-500 transition-colors">Due Today</a></li>
             </ul>
           </div>
 

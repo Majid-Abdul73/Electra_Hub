@@ -1,56 +1,80 @@
 import type { FC } from 'react';
+import { motion } from 'framer-motion';
 
 const Hero: FC = () => {
   return (
-    <div className="relative h-screen flex items-center bg-white">
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between w-full">
-        {/* Left Content */}
-        <div className=" md:w-1/2 space-y-6">
-          <img src="/icon1.svg" className='w-16 h-16' alt="" />
-          <h1 className="text-5xl font-bold leading-tight">
-            Vote, Buy<br />
-            Tickets and book<br />
-            ride <img src="/icon2.svg" alt="" /> <span className="inline-block rounded-full px-4 py-1">all in one!</span>
-          </h1>
-          
-          <p className="text-gray-600 text-lg">
-            Electra makes your life easier. Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app.
-          </p>
-          
-          <div className="space-y-4">
-            <button className="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary-light transition-colors">
-              See Events
-            </button>
-            
-            <div className="flex items-center gap-4">
-              <div className="flex -space-x-2">
-              <img src="/ppl.svg" alt="" />
-              </div>
+    <div className="min-h-screen bg-white pt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex flex-col gap-12">
+          {/* Main Content Section */}
+          <div className="flex-1 space-y-8">
+            {/* Logo and Title Section */}
+            <div className='flex justify-center gap-2'>
               <div>
-                <span className="font-bold text-xl">15 Million+</span>
-                <p className="text-sm text-gray-600">Trusted by millions of satisfied users, our financial services have made a real impact on people's lives</p>
+                <div className="flex items-center gap-2 mb-4 justify-center">
+                  <img src="/icon1.svg" alt="lightning" className="w-18 h-16" />
+                  <span className="text-8xl font-semibold">Vote, Buy</span> <br />
+                </div>
+                <div className='flex items-center justify-center'>
+                  <span className="text-8xl font-semibold">Tickets and book</span>
+                </div>
+              </div>
+
+              <div>
+                <img src="/hero-image.svg" alt="" className='w-[300px]'/>
               </div>
             </div>
+            
+            {/* Secondary Title Section */}
+            <div className="flex items-center gap-4 justify-center">
+              <span className='text-8xl font-semibold'>ride</span>
+                <img src="/icon2.svg" alt="ride" className="w-18 h-16" />
+              <span className="text-8xl font-semibold">all in one!</span>
+            </div>
+
+            {/* Description Section */}
+           <div>
+            <p className="flex text-gray-600 text-lg justify-center">
+              Electra makes your life easier. Vote seamlessly, book tickets effortlessly, and enjoy <br />
+              affordable rides all in one app.
+            </p>
+           </div>
+
+            {/* Call-to-Action Section */}
+            <div className="flex items-center gap-6 justify-center ">
+              <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors">
+                See Events
+              </button>
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-4">
+                  <img src="/ppl.svg" alt="users" className="w-16 h-16 rounded-full border-2 border-white" />
+                </div>
+                <span className="font-normal text-4xl">15 Million+</span>
+              </div>
+              <h3 className='text-sm'>Trusted by million of satidfied users, our financial <br /> services have made a real impact on people’s lives</h3>
+            </div>
           </div>
-        </div>
-        
-        {/* Right Content - Image */}
-        <div className="md:w-1/2 mt-8 md:mt-0">
-          <div className="relative">
-            <div className="absolute -inset-4 bg-secondary/30 rounded-full blur-3xl"></div>
-            <img 
-              src="/hero-image.svg" 
-              alt="Electra Platform Preview" 
-              className="relative rounded-2xl shadow-xl"
-            />
-          </div>
+
+          {/* Video Showcase Section */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="w-full aspect-video rounded-lg overflow-hidden"
+          >
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/video.jpg"
+            >
+              <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
         </div>
       </div>
-
-      {/* <div>
-      <img src="/video.jpg" alt="" />
-      </div> */}
     </div>
   );
 };

@@ -10,7 +10,14 @@ interface TestimonialCardProps {
 
 const TestimonialCard: FC<TestimonialCardProps> = ({ name, role, image, rating, events }) => {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden">
+    <div className="bg-white rounded-2xl overflow-hidden relative shadow-sm">
+      <div className="absolute top-2 right-2 z-10">
+        <button className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
+        </button>
+      </div>
       <img 
         src={image} 
         alt={name} 
