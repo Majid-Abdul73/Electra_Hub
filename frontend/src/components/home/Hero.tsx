@@ -10,26 +10,26 @@ const Hero: FC = () => {
           <div className="flex-1 space-y-8">
             {/* Logo and Title Section */}
             <div className='flex justify-center gap-2'>
-              <div>
-                <div className="flex items-center gap-2 mb-4 justify-center">
+              <div className=''>
+                <div className="flex items-center ml-52 mb-4 justify-center">
                   <img src="/icon1.svg" alt="lightning" className="w-18 h-16" />
-                  <span className="text-8xl font-semibold">Vote, Buy</span> <br />
+                  <span className="text-8xl ml-aut font-medium">Vote, Buy</span> <br />
                 </div>
                 <div className='flex items-center justify-center'>
-                  <span className="text-8xl font-semibold">Tickets and book</span>
+                  <span className="text-8xl font-medium">Tickets and book</span>
                 </div>
               </div>
 
               <div>
-                <img src="/hero-image.svg" alt="" className='w-[300px]'/>
+                <img src="/hero-image.svg" alt="" className='w-[300px] mt-6'/>
               </div>
             </div>
             
             {/* Secondary Title Section */}
             <div className="flex items-center gap-4 justify-center">
-              <span className='text-8xl font-semibold'>ride</span>
-                <img src="/icon2.svg" alt="ride" className="w-18 h-16" />
-              <span className="text-8xl font-semibold">all in one!</span>
+              <span className='text-8xl font-medium'>ride</span>
+                <img src="/icon2.svg" alt="ride" className="w-20 h-18" />
+              <span className="text-8xl font-medium">all in one!</span>
             </div>
 
             {/* Description Section */}

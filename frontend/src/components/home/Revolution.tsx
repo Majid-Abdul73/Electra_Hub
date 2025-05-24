@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 const Revolution: FC = () => {
   return (
-    <div className="py-20 bg-[#F0F0F0]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="py-20 bg-white p-8">
+      <div className="max-w-7xl rounded-3xl p-10 mx-auto bg-[#F2F2F2] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between mb-16 px-10">
           <h2 className="text-6xl font-semibold mb-4">Revolutionizing <br /> Convenience.</h2>
           <p className="text-gray-600 max-w-xl">
@@ -13,7 +13,7 @@ const Revolution: FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 px-10">
           {/* Voting Section */}
-          <div className="bg-white p-8 rounded-2xl shadow-sm">
+          <div className="bg-white p-16 rounded-2xl shadow-sm">
             <h3 className="text-3xl font-bold mb-4">Voting</h3>
             <p className="text-gray-600 mb-6">
               Empowering communities to participate in decision-making with ease and security.
@@ -39,7 +39,7 @@ const Revolution: FC = () => {
           </div>
 
           {/* Ticketing Section */}
-          <div className="bg-black text-white p-8 rounded-2xl shadow-sm">
+          <div className="bg-black text-white p-16 rounded-2xl shadow-sm">
             <h3 className="text-3xl font-bold mb-4">Ticketing</h3>
             <p className="text-[#606060] mb-6">
               Your gateway to hassle-free <br /> event access.
@@ -67,46 +67,52 @@ const Revolution: FC = () => {
 
 
          {/* Ride Section */}
-         <div className='bg-white mt-10 px-4 justify-center grid md:grid-cols-2 lg:grid-cols-2 rounded-2xl shadow-sm'>
-          <div className="bg-white p-8 rounded-2xl shadow-sm">
-            <div className="items-start mb-4">
-            <span className="text-sm text-gray-500">Optional</span>
-              <h3 className="text-2xl font-bold">Ride</h3>
+         <div className='bg-white mt-10 px-2 justify-center grid grid-cols-2 rounded-2xl shadow-sm max-w-6xl mx-auto'>
+          <div className='flex'>
+          <div className="flex flex-col items-center">
+            <div className="p-8 rounded-2xl shadow-sm">
+              <div className="items-start mb-4">
+                <span className="text-sm mb-4 text-gray-500">Optional</span>
+                <h3 className="text-2xl font-bold">Ride</h3>
+              </div>
+              <p className="text-gray-600 mb-6">
+                Reliable transportation, wherever <br /> you need to go.
+              </p>
+              <ul className="mb-6">
+                <li className="flex items-center gap-2">
+                  <span className="h-1 w-1 rounded-full bg-black"></span>
+                  <span>Quick Bookings</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1 w-1 rounded-full bg-black"></span>
+                  <span>Affordable Rates</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1 w-1 rounded-full bg-black"></span>
+                  <span>Safety First</span>
+                </li>
+              </ul>
             </div>
-            <p className="text-gray-600 mb-6">
-              Reliable transportation, wherever you need to go.
-            </p>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-black"></span>
-                <span>Quick Bookings</span>
-              </li>
-              <li className="flex items-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-black"></span>
-                <span>Affordable Rates</span>
-              </li>
-              <li className="flex items-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-black"></span>
-                <span>Safety First</span>
-              </li>
-            </ul>
+            </div>
+            <div className='my-auto ml-auto'>
+              <img src="/arrow.svg" alt="Arrow" className="w-28 h-24" />
+            </div>
           </div>
-          <div>
-
-          {/* Car */}
-          <div className="flex items-center justify-center mt-4">
-              <img src="/car.png" alt="Car illustration" className="w-1/2 h-auto" />
-            </div>
+          
+          <div className="flex items-center justify-center">
+            <img src="/car.png" alt="Car illustration" className="w-3/4 h-auto" />
           </div>
         </div>
 
-        <div className="text-center mt-16">
+        
+      </div>
+      <div className="text-center mt-16 bg-white">
           <h2 className="text-6xl font-semibold mb-10">Revolutionizing <br /> Convenience.</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-600 text-sm max-w-3xl mx-auto">
             Electra is your ultimate companion for a connected and convenient lifestyle. Designed to <br /> empower users with secure voting, seamless ticketing, and reliable rides, we are <br /> committed to making everyday tasks simpler. Whether you're expressing your choice, <br /> exploring events, or moving around, Electra has got you covered.
           </p>
         </div>
-      </div>
+      {/* .. */}
     </div>
   );
 };

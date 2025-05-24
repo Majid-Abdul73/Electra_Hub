@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import Hero from '../components/home/Hero';
 import Revolution from '../components/home/Revolution';
 import Testimonials from '../components/testimonials/Testimonials';
+import EventCard from '../components/cards/EventCard';
 
 const LandingPage: FC = () => {
   return (
@@ -9,11 +10,32 @@ const LandingPage: FC = () => {
       <Hero />
       
       <Revolution />
+
       
-      <section className="py-16 bg-gray-50">
+      
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8">Trending Events</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className='flex justify-between'>
+            <h2 className="text-3xl font-bold mb-8">Trending Events</h2>
+            <button onClick={() => window.location.href = '/events'} className='bg-black px-5 py-2 text-white rounded-2xl'>See Events</button>
+          </div> 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <EventCard 
+              title="Ghana Medical & Health Awards 2025"
+              image="/images/bhim.jpg"
+            />
+            <EventCard 
+              title="Ghana Medical & Health Awards 2025"
+              image="/images/bhim.jpg"
+            />
+            <EventCard 
+              title="Ghana Medical & Health Awards 2025"
+              image="/images/bhim.jpg"
+            />
+            <EventCard 
+              title="Ghana Medical & Health Awards 2025"
+              image="/images/bhim.jpg"
+            />
           </div>
         </div>
       </section>
