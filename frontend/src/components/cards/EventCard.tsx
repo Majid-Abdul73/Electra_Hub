@@ -32,7 +32,7 @@ const EventCard: FC<EventCardProps> = ({ title, image }) => {
         <h3 className="text-xl font-semibold text-center">{title}</h3>
         <button className='flex items-center justify-between w-full bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors'>
           <span>VIEW CATEGORIES</span>
-          <span className="text-xl">→</span>
+          <span className="text-xl bg-white text-black rounded-full p-1 items-center w-8 h-8">→</span>
         </button>
       </div>
     </div>

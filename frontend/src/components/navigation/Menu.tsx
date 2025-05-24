@@ -1,34 +1,39 @@
 import type { FC } from 'react';
 
+// Props interface for the Menu component
 interface MenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+// Main Menu component that displays a full-screen navigation menu
 const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
+  // Don't render anything if menu is closed
   if (!isOpen) return null;
 
   return (
+    // Overlay background with semi-transparent black
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
+      {/* // Main menu container with white background */}
       <div className="fixed inset-y-0 left-0 w-full bg-white p-8 overflow-y-auto min-h-screen">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-center mb-12">
-            <h2 className="text-3xl font-normal">Menu</h2>
+          {/* // Header section with title and close button */}
+          <div className="flex justify-between items-center mb-8 z-50 ">
+            <h2 className="text-5xl font-normal">Menu</h2>
             <button 
               onClick={onClose}
-              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+              className="py-2 hover:bg-gray-100 rounded-full transition-colors"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
+              <img src="/close.svg" alt="" className='w-12 h-12'/>
             </button>
           </div>
 
-          <div className="space-y-6">
-            <MenuLink number="01" title="Discover" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" />
-            <MenuLink number="02" title="Find Events" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" isDark />
-            <MenuLink number="03" title="Marketplace" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" />
-            <MenuLink number="04" title="Help Center" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" isDark />
+          {/* // Navigation links container */}
+          <div className="space-y-1">
+            <MenuLink number="/01.svg" title="Discover" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" />
+            <MenuLink number="/02.svg" title="Find Events" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" isDark />
+            <MenuLink number="/03.svg" title="Marketplace" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" />
+            <MenuLink number="/04.svg" title="Help Center" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" isDark />
           </div>
         </div>
       </div>
@@ -36,15 +41,18 @@ const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
   );
 };
 
+// Props interface for individual menu links
 interface MenuLinkProps {
-  number: string;
-  title: string;
-  description: string;
-  isDark?: boolean;
+  number: string;      // Display number for the link
+  title: string;       // Link title
+  description: string; // Link description
+  isDark?: boolean;    // Optional flag for dark theme styling
 }
 
+// MenuLink component for individual navigation items
 const MenuLink: FC<MenuLinkProps> = ({ number, title, description, isDark = false }) => {
   return (
+    // Link container with conditional styling based on isDark prop
     <a 
       href="#" 
       className={`block p-8 rounded-3xl transition-transform hover:scale-[0.98] ${
@@ -52,21 +60,22 @@ const MenuLink: FC<MenuLinkProps> = ({ number, title, description, isDark = fals
       }`}
     >
       <div className="flex items-start justify-between">
-        <div>
-          <span className="text-6xl font-light opacity-50">{number}</span>
-          <h3 className="text-4xl mt-4 mb-2">{title}</h3>
-          <p className={`text-base ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-            {description}
-          </p>
+        <div className=''>
+          {/* // Number and content layout */}
+          <div className='flex items-center gap-8'>
+            <div>
+              <img src={number} alt="" className="w-24 h-24 opacity-50" />
+            </div>
+            <div>
+              <h3 className="text-4xl mt-4 mb-2">{title}</h3>
+              <p className={`text-base ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                {description}
+              </p>
+            </div>
+          </div>
         </div>
-        <svg 
-          className={`w-8 h-8 mt-2 transform rotate-45 ${isDark ? 'text-white' : 'text-black'}`} 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-7-7l7 7-7 7" />
-        </svg>
+        {/* // Arrow icon */}
+        <img src="/menu.arrow.svg" alt="" className='w-20 h-16'/>        
       </div>
     </a>
   );
