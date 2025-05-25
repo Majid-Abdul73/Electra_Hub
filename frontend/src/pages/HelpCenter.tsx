@@ -3,65 +3,50 @@ import type { FC } from 'react';
 const HelpCenter: FC = () => {
   return (
     <div className="min-h-screen py-16">
+       <div className='py-16 -mt-40'>
+          <img src="/images/banner.jpg" alt="" />
+        </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold mb-8">Help Center</h1>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              <details className="p-4 rounded-lg bg-gray-50">
-                <summary className="font-medium cursor-pointer">
-                  How do I purchase tickets?
-                </summary>
-                <p className="mt-2 text-gray-600">
-                  You can purchase tickets by browsing events and clicking on the "Buy Ticket" button. Follow the checkout process to complete your purchase.
-                </p>
-              </details>
-              
-              <details className="p-4 rounded-lg bg-gray-50">
-                <summary className="font-medium cursor-pointer">
-                  How does voting work?
-                </summary>
-                <p className="mt-2 text-gray-600">
-                  Our secure voting system allows you to cast your vote for your preferred candidate. Each vote is encrypted and recorded on our platform.
-                </p>
-              </details>
+        <div className="text-center mb-4">
+          <h1 className="text-6xl font-normal mb-4">
+            How can <span className="text-gray-400">we help?</span>
+          </h1>
+          <p className="text-gray-500">
+            Electra makes your life easier. Vote seamlessly, book tickets effortlessly, and enjoy <br /> affordable rides all in one app.
+          </p>
+        </div>
+
+        <div className="bg-[#F5F5F] p-12 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Phone Contact */}
+            <div className="items-center flex gap-4 bg-[#FFFBF2] p-8">
+              <img src="/icons/phone.svg" alt="" className='w-10 h-12'/>
+              <div className="mb-4">
+                <h3 className="text-sm text-gray-400 font mb-2">Call us today</h3>
+                <p className="text-xl">+233 24 031 2264</p>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="items-center flex gap-4 bg-[#FFFBF2] p-8">
+              <img src="/icons/location.svg" alt="" className='w-10 h-12'/>
+              <div className="mb-4">
+                <h3 className="text-sm text-gray-400 font-medium mb-2">Locate us today</h3>
+                <p className="text-xl">North Legon, Street</p>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="items-center flex gap-4 bg-[#FFFBF2] p-8">
+              <img src="/icons/email.svg" alt="" className='w-10 h-12'/>
+              <div className="mb-4">
+                <h3 className="text-sm text-gray-400 font-medium mb-2">Email us today</h3>
+                <p className="text-xl">info@electra.com</p>
+              </div>
             </div>
           </div>
-          
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-semibold mb-4">Contact Support</h2>
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="mt-1 block w-full px-3 py-2 border rounded-md"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  className="mt-1 block w-full px-3 py-2 border rounded-md"
-                  rows={4}
-                  placeholder="How can we help?"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-black text-white py-2 rounded-md"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
         </div>
+
       </div>
     </div>
   );

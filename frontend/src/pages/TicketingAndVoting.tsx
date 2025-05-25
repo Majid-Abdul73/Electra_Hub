@@ -1,48 +1,55 @@
 import type { FC } from 'react';
-import { useState } from 'react';
 import EventFilter from '../components/filters/EventFilter';
+import EventCard from '../components/cards/EventCard';
 
 const TicketingAndVoting: FC = () => {
-  const [activeTab, setActiveTab] = useState<'tickets' | 'voting'>('tickets');
+  // Sample event data - you can replace this with actual data from an API
+  const events = [
+    {
+      title: 'Ethan Concert 2022',
+      image: '/images/bhim.jpg',
+    },
+    {
+      title: 'Ethan Concert 2022',
+      image: '/images/bhim.jpg',
+    },
+    {
+      title: 'Ethan Concert 2022',
+      image: '/images/bhim.jpg',
+    },
+    {
+      title: 'Ethan Concert 2022',
+      image: '/images/bhim.jpg',
+    },
+  ];
 
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen py- bg-white">
+      <img src="/images/banner.jpg" alt="Banner" className="w-full h-80 object-cover mb-8" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-8">
-          <div className="flex space-x-4">
-            <button
-              onClick={() => setActiveTab('tickets')}
-              className={`px-4 py-2 rounded-md ${
-                activeTab === 'tickets'
-                  ? 'bg-black text-white'
-                  : 'bg-gray-100 text-gray-700'
-              }`}
-            >
-              Tickets
-            </button>
-            <button
-              onClick={() => setActiveTab('voting')}
-              className={`px-4 py-2 rounded-md ${
-                activeTab === 'voting'
-                  ? 'bg-black text-white'
-                  : 'bg-gray-100 text-gray-700'
-              }`}
-            >
-              Voting
-            </button>
+        
+        <section className="flex flex-col md:flex-row gap-8">
+          {/* Filter section - takes 1 column */}
+          <div className="w-full  md:w-1/3">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
+              <EventFilter />
+            </div>
           </div>
-          <EventFilter />
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {activeTab === 'tickets' ? (
-            // Event cards will be rendered here
-            <div>Event Cards</div>
-          ) : (
-            // Vote cards will be rendered here
-            <div>Vote Cards</div>
-          )}
-        </div>
+          {/* Ticketing and voting events section - takes 2 columns */}
+          <div className="w-full md:w-2/3 bg-gray-50 p-6">
+          <h1 className="text-3xl font-bold mb-6">Ticketing and Voting Events</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {events.map((event, index) => (
+                <EventCard 
+                  key={index}
+                  title={event.title}
+                  image={event.image}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

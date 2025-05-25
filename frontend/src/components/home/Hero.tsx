@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { motion } from 'framer-motion';
 
 const Hero: FC = () => {
   return (
@@ -12,7 +11,7 @@ const Hero: FC = () => {
             <div className='flex justify-center gap-2'>
               <div className=''>
                 <div className="flex items-center ml-52 mb-4 justify-center">
-                  <img src="/icon1.svg" alt="lightning" className="w-18 h-16" />
+                  <img src="/icons/icon1.svg" alt="lightning" className="w-18 h-16" />
                   <span className="text-8xl ml-aut font-medium">Vote, Buy</span> <br />
                 </div>
                 <div className='flex items-center justify-center'>
@@ -21,14 +20,14 @@ const Hero: FC = () => {
               </div>
 
               <div>
-                <img src="/hero-image.svg" alt="" className='w-[300px] mt-6'/>
+                <img src="/icons/hero-image.svg" alt="" className='w-[300px] mt-6'/>
               </div>
             </div>
             
             {/* Secondary Title Section */}
             <div className="flex items-center gap-4 justify-center">
               <span className='text-8xl font-medium'>ride</span>
-                <img src="/icon2.svg" alt="ride" className="w-20 h-18" />
+                <img src="/icons/icon2.svg" alt="ride" className="w-20 h-18" />
               <span className="text-8xl font-medium">all in one!</span>
             </div>
 
@@ -47,7 +46,7 @@ const Hero: FC = () => {
               </button>
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-4">
-                  <img src="/ppl.svg" alt="users" className="w-16 h-16 rounded-full border-2 border-white" />
+                  <img src="/icons/ppl.svg" alt="users" className="w-16 h-16 rounded-full border-2 border-white" />
                 </div>
                 <span className="font-normal text-4xl">15 Million+</span>
               </div>
@@ -55,24 +54,16 @@ const Hero: FC = () => {
             </div>
           </div>
 
-          {/* Video Showcase Section */}
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-full aspect-video rounded-lg overflow-hidden"
-          >
             <video
               className="w-full h-full object-cover"
               autoPlay
               muted
               loop
               playsInline
-              poster="/video.jpg"
+              poster="/images/video.jpg"
             >
               <source src="/hero-video.mp4" type="video/mp4" />
             </video>
-          </motion.div>
         </div>
       </div>
     </div>

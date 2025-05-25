@@ -33,7 +33,7 @@ const Revolution: FC = () => {
               </li>
             </ul>
             <button className="bg-black flex items-center text-white px-6 py-2 rounded-full gap-4 hover:bg-gray-800 transition-colors">
-              <img src="/vote.svg" alt="Vote icon" className="w-5 h-5" />
+              <img src="/icons/vote.svg" alt="Vote icon" className="w-5 h-5" />
               Once off Voting
             </button>
           </div>
@@ -59,7 +59,7 @@ const Revolution: FC = () => {
               </li>
             </ul>
             <button className="flex items-center bg-white text-black px-6 py-2 gap-4 rounded-full hover:bg-gray-100 transition-colors">
-              <img src="/tick.svg" alt="Ticket icon" className="w-5 h-5" />
+              <img src="/icons/tick.svg" alt="Ticket icon" className="w-5 h-5" />
               Once off ticketing
             </button>
           </div>          
@@ -95,12 +95,12 @@ const Revolution: FC = () => {
             </div>
             </div>
             <div className='my-auto ml-auto'>
-              <img src="/arrow.svg" alt="Arrow" className="w-28 h-24" />
+              <img src="/icons/arrow.svg" alt="Arrow" className="w-28 h-24" />
             </div>
           </div>
           
           <div className="flex items-center justify-center">
-            <img src="/car.png" alt="Car illustration" className="w-3/4 h-auto" />
+            <img src="/images/car.png" alt="Car illustration" className="w-3/4 h-auto" />
           </div>
         </div>
 

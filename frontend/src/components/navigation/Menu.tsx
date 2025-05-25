@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 // Props interface for the Menu component
 interface MenuProps {
@@ -24,16 +25,16 @@ const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
               onClick={onClose}
               className="py-2 hover:bg-gray-100 rounded-full transition-colors"
             >
-              <img src="/close.svg" alt="" className='w-12 h-12'/>
+              <img src="/icons/close.svg" alt="" className='w-12 h-12'/>
             </button>
           </div>
 
           {/* // Navigation links container */}
           <div className="space-y-1">
-            <MenuLink number="/01.svg" title="Discover" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" />
-            <MenuLink number="/02.svg" title="Find Events" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" isDark />
-            <MenuLink number="/03.svg" title="Marketplace" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" />
-            <MenuLink number="/04.svg" title="Help Center" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" isDark />
+            <MenuLink number="/icons/01.svg" title="Discover" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" to="/" onClose={onClose} />
+            <MenuLink number="/icons/02.svg" title="Find Events" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" isDark to="/events" onClose={onClose} />
+            <MenuLink number="/icons/03.svg" title="Marketplace" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" to="/marketplace" onClose={onClose} />
+            <MenuLink number="/icons/04.svg" title="Help Center" description="Vote seamlessly, book tickets effortlessly, and enjoy affordable rides all in one app" isDark to="/help" onClose={onClose} />
           </div>
         </div>
       </div>
@@ -43,18 +44,21 @@ const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
 
 // Props interface for individual menu links
 interface MenuLinkProps {
-  number: string;      // Display number for the link
-  title: string;       // Link title
-  description: string; // Link description
-  isDark?: boolean;    // Optional flag for dark theme styling
+  number: string;      
+  title: string;     
+  description: string; 
+  isDark?: boolean;   
+  to: string;         
+  onClose: () => void;
 }
 
 // MenuLink component for individual navigation items
-const MenuLink: FC<MenuLinkProps> = ({ number, title, description, isDark = false }) => {
+const MenuLink: FC<MenuLinkProps> = ({ number, title, description, isDark = false, to, onClose }) => {
   return (
     // Link container with conditional styling based on isDark prop
-    <a 
-      href="#" 
+    <Link 
+      to={to} 
+      onClick={onClose}
       className={`block p-8 rounded-3xl transition-transform hover:scale-[0.98] ${
         isDark ? 'bg-black text-white' : 'bg-gray-100'
       }`}
@@ -75,9 +79,9 @@ const MenuLink: FC<MenuLinkProps> = ({ number, title, description, isDark = fals
           </div>
         </div>
         {/* // Arrow icon */}
-        <img src="/menu.arrow.svg" alt="" className='w-20 h-16'/>        
+        <img src="/icons/menu.arrow.svg" alt="" className='w-20 h-16'/>        
       </div>
-    </a>
+    </Link>
   );
 };
 
