@@ -10,10 +10,7 @@ const LandingPage: FC = () => {
     <div className="min-h-screen">
       <Hero />
       
-      <Revolution />
-
-      
-      
+      <Revolution />      
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className='flex justify-between'>

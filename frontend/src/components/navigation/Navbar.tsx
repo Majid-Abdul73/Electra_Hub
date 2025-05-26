@@ -6,8 +6,8 @@ const Navbar: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white z-50 rounded-b-2xl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 max-w-7xl mx-auto bg-white shadow mt-5 z-50 rounded-full">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex gap-6 items-center">
             <img src="/icons/logo.svg" alt="Electra" className="h-6 w-auto" />
