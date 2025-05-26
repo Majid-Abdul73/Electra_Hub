@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useState } from 'react';
 
-interface VoteCardProps {
+interface TicketCardProps {
   event: {
     title: string;
     image: string;
@@ -9,36 +9,39 @@ interface VoteCardProps {
     time: string;
     venue: string;
     location: string;
+    price: string;
   };
-  onVote: () => void;
+  onBuyTicket?: () => void;
 }
 
-const VoteCard: FC<VoteCardProps> = ({ event, onVote }) => {
+const TicketCard: FC<TicketCardProps> = ({ event, onBuyTicket = () => {} }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-sm">
-      {/* Event Image with Share Button */}
+    <div className="relative bg-white rounded-lg overflow-hidden shadow-sm w-full max-w-sm">
+      {/* Event Image */}
       <div className="relative">
         <img 
           src={event.image} 
           alt={event.title}
           className="w-full h-48 object-cover"
         />
+        
+        {/* Share Button */}
         <button 
-          className="absolute top-4 right-4 bg-gray-700 bg-opacity-70 text-white rounded-full p-2 w-8 h-8 flex items-center justify-center"
+          className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100"
           aria-label="Share"
         >
-          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
           </svg>
         </button>
       </div>
-      
-      {/* Event Details */}
+
+      {/* Content */}
       <div className="p-4">
         {/* Title and Bookmark */}
-        <div className="flex justify-between items-center mb-1">
+        <div className="flex justify-between items-start mb-1">
           <h3 className="text-lg font-medium">{event.title}</h3>
           <button 
             onClick={() => setIsFavorite(!isFavorite)}
@@ -62,14 +65,31 @@ const VoteCard: FC<VoteCardProps> = ({ event, onVote }) => {
           <div>{event.venue}</div>
           <div>{event.location}</div>
         </div>
+
+        {/* Price and Rating */}
+        <div className="mt-4 flex items-center justify-between">
+          <div className="flex items-center">
+            <div className="text-amber-400">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div className="text-xl font-bold">{event.price}</div>
+        </div>
         
-        {/* Vote Button */}
+        {/* Buy Ticket Button */}
         <div className="mt-4">
           <button 
-            onClick={onVote}
-            className="w-full bg-black text-white py-2 rounded-full font-medium text-sm"
+            onClick={onBuyTicket}
+            className="w-full bg-black text-white py-2 rounded-full font-medium text-sm flex items-center justify-center gap-2"
           >
-            BUY A VOTE
+            <span>BUY A TICKET</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+            </svg>
           </button>
         </div>
       </div>
@@ -77,4 +97,4 @@ const VoteCard: FC<VoteCardProps> = ({ event, onVote }) => {
   );
 };
 
-export default VoteCard;
+export default TicketCard;

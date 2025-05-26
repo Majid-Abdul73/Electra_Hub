@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import Hero from '../components/home/Hero';
 import Revolution from '../components/home/Revolution';
 import Testimonials from '../components/testimonials/Testimonials';
-import EventCard from '../components/cards/EventCard';
+import TicketCard from '../components/cards/TicketCard';
 import { Link } from 'react-router-dom';
 
 const LandingPage: FC = () => {
@@ -18,21 +18,50 @@ const LandingPage: FC = () => {
             <Link to="/events" className='bg-black px-5 py-0 text-white rounded-2xl'>See Events</Link>
           </div> 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <EventCard 
-              title="Ghana Medical & Health Awards 2025"
-              image="/images/bhim.jpg"
+            <TicketCard 
+              event={{
+                title: "The Beast Concert",
+                image: "/images/bhim.jpg",
+                date: "12th December, 2024",
+                time: "16:00GMT",
+                venue: "National Event Centre",
+                location: "Greater Accra, Lakeside",
+                price: "$120"
+              }}
+              onBuyTicket={() => console.log('Buy ticket clicked')}
             />
-            <EventCard 
-              title="Ghana Medical & Health Awards 2025"
-              image="/images/bhim.jpg"
+            <TicketCard 
+              event={{
+                title: "Ghana Medical & Health Awards 2025",
+                image: "/images/bhim.jpg",
+                date: "15th January, 2025",
+                time: "18:00GMT",
+                venue: "Accra International Conference Centre",
+                location: "Greater Accra, Ridge",
+                price: "$150"
+              }}
             />
-            <EventCard 
-              title="Ghana Medical & Health Awards 2025"
-              image="/images/bhim.jpg"
+            <TicketCard 
+              event={{
+                title: "Ghana Medical & Health Awards 2025",
+                image: "/images/bhim.jpg",
+                date: "15th January, 2025",
+                time: "18:00GMT",
+                venue: "Accra International Conference Centre",
+                location: "Greater Accra, Ridge",
+                price: "$150"
+              }}
             />
-            <EventCard 
-              title="Ghana Medical & Health Awards 2025"
-              image="/images/bhim.jpg"
+            <TicketCard 
+              event={{
+                title: "Ghana Medical & Health Awards 2025",
+                image: "/images/bhim.jpg",
+                date: "15th January, 2025",
+                time: "18:00GMT",
+                venue: "Accra International Conference Centre",
+                location: "Greater Accra, Ridge",
+                price: "$150"
+              }}
             />
           </div>
         </div>

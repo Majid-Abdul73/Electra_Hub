@@ -6,37 +6,38 @@ const Hero: FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col gap-12">
           {/* Main Content Section */}
-          <div className="flex-1 space-y-8">
+          <div className="flex-1 space-y-0">
             {/* Logo and Title Section */}
-            <div className='flex justify-center gap-2'>
+            <div className='flex justify-center mt-8 gap-0'>
               <div className=''>
-                <div className="flex items-center ml-52 mb-4 justify-center">
+                <div className="flex items-center ml-52 mb-2 justify-center">
                   <img src="/icons/icon1.svg" alt="lightning" className="w-18 h-16" />
-                  <span className="text-8xl ml-aut font-medium">Vote, Buy</span> <br />
+                  <span className="text-7xl mr-8 font-medium">Vote, Buy</span> <br />
                 </div>
                 <div className='flex items-center justify-center'>
-                  <span className="text-8xl font-medium">Tickets and book</span>
+                  <span className="text-7xl font-medium">Tickets and book</span>
                 </div>
               </div>
 
               <div>
-                <img src="/icons/hero-image.svg" alt="" className='w-[300px] mt-6'/>
+                <img src="/icons/hero-image.svg" alt="" className='w-[250px] mt-1'/>
               </div>
             </div>
             
             {/* Secondary Title Section */}
             <div className="flex items-center gap-4 justify-center">
-              <span className='text-8xl font-medium'>ride</span>
+              <span className='text-7xl font-medium'>ride</span>
                 <img src="/icons/icon2.svg" alt="ride" className="w-20 h-18" />
-              <span className="text-8xl font-medium">all in one!</span>
+              <span className="text-7xl font-medium">all in one!</span>
             </div>
 
             {/* Description Section */}
-           <div>
-            <p className="flex text-gray-600 text-lg justify-center">
-              Electra makes your life easier. Vote seamlessly, book tickets effortlessly, and enjoy <br />
-              affordable rides all in one app.
+           <div className='justify-center items-center py-16 '>
+            <p className="flex text-gray-400 text-lg justify-center">
+              Electra makes your life easier. Vote seamlessly, book tickets effortlessly, and enjoy
             </p>
+            <p className="flex text-gray-400 text-lg justify-center">
+              affordable rides all in one app.</p>
            </div>
 
             {/* Call-to-Action Section */}
@@ -48,9 +49,9 @@ const Hero: FC = () => {
                 <div className="flex -space-x-4">
                   <img src="/icons/ppl.svg" alt="users" className="w-16 h-16 rounded-full border-2 border-white" />
                 </div>
-                <span className="font-normal text-4xl">15 Million+</span>
+                <span className="font-normal text-3xl">15 Million+</span>
               </div>
-              <h3 className='text-sm'>Trusted by million of satidfied users, our financial <br /> services have made a real impact on people’s lives</h3>
+              <h3 className='text-sm text-gray-400'>Trusted by million of satidfied users, our financial <br /> services have made a real impact on people’s lives</h3>
             </div>
           </div>
 

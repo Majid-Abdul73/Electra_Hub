@@ -9,6 +9,9 @@ const Marketplace = lazy(() => import('./pages/Marketplace'));
 const HelpCenter = lazy(() => import('./pages/HelpCenter'));
 const Purchase = lazy(() => import('./pages/Purchase'));
 
+const VotePage = lazy(() => import('./pages/VotePage'));
+const TicketPage = lazy(() => import('./pages/TicketPage'));
+
 // Loading spinner component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen">
@@ -26,7 +29,10 @@ function App() {
             <Route path="/events" element={<TicketingAndVoting />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/help" element={<HelpCenter />} />
-            <Route path="/purchase/:id" element={<Purchase />} />
+            <Route path="/purchase/:id" element={<Purchase />} />y
+
+            <Route path="/vote" element={<VotePage />} />
+            <Route path="/ticket" element={<TicketPage />} />
           </Routes>
         </Suspense>
       </MainLayout>

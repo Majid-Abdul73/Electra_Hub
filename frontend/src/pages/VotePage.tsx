@@ -1,8 +1,6 @@
 import type { FC } from 'react';
 import EventFilter from '../components/filters/EventFilter';
 import VotingEvent from '../components/events/VotingEvent';
-import TicketingEvent from '../components/events/TicketingEvent';
-import VoteAndTicketEvent from '../components/events/VoteAndTicketEvent';
 
 const TicketingAndVoting: FC = () => {
 
@@ -22,28 +20,13 @@ const TicketingAndVoting: FC = () => {
           {/* Ticketing and Voting Events section - takes 2 columns */}
           <div className="w-full md:w-2/3 flex flex-col gap-8">
 
-            {/* Ticketing and Voting Events section */}
-            <div className="bg-[#FAFAFA] p-12 rounded-lg shadow-sm">
-              <h2 className="text-2xl font-bold mb-4">Ticketing and Voting Events</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <VoteAndTicketEvent />
-                {/* Voting event cards would go here */}
-              </div>
-            </div>
-
             {/* Voting Events section */}
             <div className="bg-[#F5F1E9] p-12 justify-between rounded-lg shadow-sm">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <VotingEvent />
               </div>
             </div>
-            
-            {/* Ticketing Events section */}
-            <div className="bg-[#ECECEC] p-12 rounded-lg shadow-sm">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <TicketingEvent />
-              </div>
-            </div>
+                       
           </div>
         </section>
       </div>
