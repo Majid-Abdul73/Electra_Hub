@@ -22,6 +22,14 @@ const TicketingAndVoting: FC = () => {
 
             {/* Voting Events section */}
             <div className="bg-[#F5F1E9] p-12 justify-between rounded-lg shadow-sm">
+            <div>
+                  <h1 className='text-3xl font-semibold'>
+                    Unforgettable Entertainment <br /> Experiences
+                  </h1>
+                  <p className='text-gray-400'>
+                    Experience the Best in Music concerts, Parties and Arts
+                  </p>
+                </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <VotingEvent />
               </div>

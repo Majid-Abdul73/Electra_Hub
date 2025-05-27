@@ -10,12 +10,12 @@ const LandingPage: FC = () => {
     <div className="min-h-screen">
       <Hero />
       
-      <Revolution />      
+      <Revolution />
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className='flex justify-between'>
+          <div className='flex py-2 justify-between items-center'>
             <h2 className="text-3xl font-bold mb-8">Trending Events</h2>
-            <Link to="/events" className='bg-black px-5 py-0 text-white rounded-2xl'>See Events</Link>
+            <Link to="/events" className="text-md bg-black text-white p-2 px-3 rounded-3xl font-bold mb-8">See Events</Link>
           </div> 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <TicketCard 

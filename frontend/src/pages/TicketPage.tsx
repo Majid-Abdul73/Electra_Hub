@@ -19,8 +19,18 @@ const TicketingAndVoting: FC = () => {
           {/* Ticketing and Voting Events section - takes 2 columns */}
           <div className="w-full md:w-2/3 flex flex-col gap-8">
 
+          
+
             {/* Ticketing Events section */}
             <div className="bg-[#ECECEC] p-12 rounded-lg shadow-sm">
+                <div>
+                  <h1 className='text-3xl font-semibold'>
+                    Unforgettable Entertainment <br /> Experiences
+                  </h1>
+                  <p className='text-gray-400'>
+                    Experience the Best in Music concerts, Parties and Arts
+                  </p>
+                </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <TicketingEvent />
               </div>

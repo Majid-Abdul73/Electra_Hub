@@ -3,9 +3,7 @@ import type { FC } from 'react';
 const HelpCenter: FC = () => {
   return (
     <div className="min-h-screen py-16">
-       <div className='py-16 -mt-40'>
-          <img src="/images/banner.jpg" alt="" />
-        </div>
+      <img src="/images/banner.jpg" alt="" className='w-full h-128 object-cover mb-8 -mt-32'/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-4">
           <h1 className="text-6xl font-normal mb-4">

@@ -17,13 +17,13 @@ const VoteCard: FC<VoteCardProps> = ({ event, onVote }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
       {/* Event Image with Share Button */}
       <div className="relative">
         <img 
           src={event.image} 
           alt={event.title}
-          className="w-full h-48 object-cover"
+          className="w-full h-64 object-cover"
         />
         <button 
           className="absolute top-4 right-4 bg-gray-700 bg-opacity-70 text-white rounded-full p-2 w-8 h-8 flex items-center justify-center"
@@ -39,10 +39,11 @@ const VoteCard: FC<VoteCardProps> = ({ event, onVote }) => {
       <div className="p-4">
         {/* Title and Bookmark */}
         <div className="flex justify-between items-center mb-1">
-          <h3 className="text-lg font-medium">{event.title}</h3>
+          {/* <h3 className="text-lg font-medium">{event.title}</h3> */}
+          <h3 className="text-xl font-semibold">{event.title}</h3>
           <button 
             onClick={() => setIsFavorite(!isFavorite)}
-            className={`${isFavorite ? 'text-black' : 'text-gray-300'}`}
+            className={`${isFavorite ? 'text-black bg-white p-2 shadow-md rounded-full' : 'text-gray-300 bg-white p-2 shadow-md rounded-full'}`}
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
@@ -58,18 +59,18 @@ const VoteCard: FC<VoteCardProps> = ({ event, onVote }) => {
         </div>
         
         {/* Venue and Location */}
-        <div className="text-gray-500 text-xs mb-4">
-          <div>{event.venue}</div>
-          <div>{event.location}</div>
-        </div>
-        
+          <div className='text-gray500 text-xl mb-'>{event.venue}</div>
+          <div className='text-gray-500 text-xs mb-4'>{event.location}</div>
+
+
         {/* Vote Button */}
         <div className="mt-4">
           <button 
             onClick={onVote}
-            className="w-full bg-black text-white py-2 rounded-full font-medium text-sm"
+            className="flex w-full justify-center gap-4 bg-black text-white py-3 rounded-full font-medium text-sm"
           >
             BUY A VOTE
+            <img src="/icons/vote1.svg" alt="" className='h-4 w-6'/>
           </button>
         </div>
       </div>

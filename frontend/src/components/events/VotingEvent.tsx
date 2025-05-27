@@ -60,7 +60,7 @@ const VotingEvent: FC<VotingEventProps> = ({
   return (
     <div className="w-[750px]">
       {showTitle && (
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
+        <h2 className="text-3xl font-bold mb-4">{title}</h2>
       )}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 mx-auto">
         {events.map((event, index) => (
@@ -76,7 +76,7 @@ const VotingEvent: FC<VotingEventProps> = ({
         <img src="/icons/arrow.svg" alt="" className='w-14 h-8'/>
         <button 
           onClick={handleSeeAllEvents}
-          className='text-white bg-black px-4 py-0 rounded-3xl '
+          className='text-white bg-black px-4 py-3 rounded-3xl '
         >
           See Events
         </button>

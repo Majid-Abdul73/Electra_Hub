@@ -71,7 +71,7 @@ const VoteAndTicketEvent: FC = () => {
 
       <div className='flex justify-between py-9 '>
         <img src="/icons/arrow.svg" alt="" className='w-14 h-8'/>
-        <button className='text-white bg-black px-4 py-0 rounded-3xl '>See Events</button>
+        <button className='text-white bg-black px-4 py-3 rounded-3xl '>See Events</button>
       </div>
     </div>
   );
