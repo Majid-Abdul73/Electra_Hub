@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero: FC = () => {
   return (
@@ -43,9 +44,9 @@ const Hero: FC = () => {
 
             {/* Call-to-Action Section */}
             <div className="flex items-center gap-6 justify-center ">
-              <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors">
+              <Link to="/events" className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors">
                 See Events
-              </button>
+              </Link>
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-4">
                   <img src="/icons/ppl.svg" alt="users" className="w-16 h-16 rounded-full border-2 border-white" />

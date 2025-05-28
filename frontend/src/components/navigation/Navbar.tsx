@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { useState } from 'react';
+import { Link } from'react-router-dom';
 import Menu from './Menu';
 
 const Navbar: FC = () => {
@@ -10,7 +11,11 @@ const Navbar: FC = () => {
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex gap-6 items-center">
-            <img src="/icons/logo.svg" alt="Electra" className="h-6 w-auto" />
+
+            <Link to="/"> 
+              <img src="/icons/logo.svg" alt="Electra" 
+              className="h-6 w-auto" />
+            </Link>
             <button 
               onClick={() => setIsMenuOpen(true)}
               className="flex gap-2 text-gray-600 hover:text-gray-900"

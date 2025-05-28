@@ -192,7 +192,7 @@ const EventDetails: FC = () => {
                   {(event.type === 'ticketing' || event.type === 'both') && (
                     <button className="bg-[#69D097] text-white py-2 px-2 rounded-full flex items-center justify-center gap-2">
                       <span className='text-s'>BUY A TICKET</span>
-                      <img src="/icons/tick.svg" alt="" className="w-5 h-5" />
+                      <img src="/icons/ticket.svg" alt="" className="w-5 h-5" />
                     </button>
                   )}
                   {(event.type === 'voting' || event.type === 'both') && (

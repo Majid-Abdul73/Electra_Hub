@@ -19,11 +19,11 @@ const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
       <div className="fixed inset-y-0 left-0 w-full bg-white p-8 overflow-y-auto min-h-screen">
         <div className="max-w-7xl mx-auto">
           {/* // Header section with title and close button */}
-          <div className="flex justify-between items-center mb-8 z-50 ">
-            <h2 className="text-5xl font-normal">Menu</h2>
+          <div className="flex justify-between items-center mb-8 z-50">
+            <h2 className="text-4xl font-normal">Menu</h2>
             <button 
               onClick={onClose}
-              className="py-2 hover:bg-gray-100 rounded-full transition-colors"
+              className=""
             >
               <img src="/icons/close.svg" alt="" className='w-12 h-12'/>
             </button>
@@ -59,27 +59,28 @@ const MenuLink: FC<MenuLinkProps> = ({ number, title, description, isDark = fals
     <Link 
       to={to} 
       onClick={onClose}
-      className={`block p-8 rounded-3xl transition-transform hover:scale-[0.98] ${
-        isDark ? 'bg-black text-white' : 'bg-gray-100'
+      className={`block p-8 rounded-3xl transition-transform hover:scale-[0.998] ${
+        isDark ? 'bg-black text-white' : 'bg-[#F5F5F5]'
       }`}
     >
-      <div className="flex items-start justify-between">
-        <div className=''>
-          {/* // Number and content layout */}
+      <div className="flex items-center justify-between px-10">
+          {/* Number and content layout */}
           <div className='flex items-center gap-8'>
             <div>
-              <img src={number} alt="" className="w-24 h-24 opacity-50" />
+              <img src={number} alt="" className="w-32 h-32 opacity-50" />
             </div>
             <div>
-              <h3 className="text-4xl mt-4 mb-2">{title}</h3>
+              <h3 className="text-6xl mt-4 mb-2">{title}</h3>
               <p className={`text-base ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                 {description}
               </p>
             </div>
           </div>
-        </div>
-        {/* // Arrow icon */}
-        <img src="/icons/menu.arrow.svg" alt="" className='w-20 h-16'/>        
+
+          <div className='flex'>
+            {/* Arrow icon */}
+            <img src="/icons/menu.arrow.svg" alt="" className='w-20 h-16'/>
+          </div>
       </div>
     </Link>
   );

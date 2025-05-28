@@ -20,6 +20,7 @@ const LandingPage: FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <TicketCard 
               event={{
+                id: "landing-ticket-1",
                 title: "The Beast Concert",
                 image: "/images/bhim.jpg",
                 date: "12th December, 2024",
@@ -32,6 +33,7 @@ const LandingPage: FC = () => {
             />
             <TicketCard 
               event={{
+                id: "landing-ticket-2",
                 title: "Ghana Medical & Health Awards 2025",
                 image: "/images/bhim.jpg",
                 date: "15th January, 2025",
@@ -43,6 +45,7 @@ const LandingPage: FC = () => {
             />
             <TicketCard 
               event={{
+                id: "landing-ticket-3",
                 title: "Ghana Medical & Health Awards 2025",
                 image: "/images/bhim.jpg",
                 date: "15th January, 2025",
@@ -54,6 +57,7 @@ const LandingPage: FC = () => {
             />
             <TicketCard 
               event={{
+                id: "landing-ticket-4",
                 title: "Ghana Medical & Health Awards 2025",
                 image: "/images/bhim.jpg",
                 date: "15th January, 2025",
