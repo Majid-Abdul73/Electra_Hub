@@ -1,8 +1,10 @@
 import type { FC } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface TicketCardProps {
   event: {
+    id: string;
     title: string;
     image: string;
     date: string;
@@ -82,13 +84,14 @@ const TicketCard: FC<TicketCardProps> = ({ event, onBuyTicket = () => {} }) => {
         
         {/* Buy Ticket Button */}
         <div className="mt-4">
-          <button 
+          <Link 
+            to={`/event/${event.id}`}
             onClick={onBuyTicket}
             className="w-full bg-black text-white py-3 rounded-full font-medium text-sm flex items-center justify-center gap-2"
           >
             <span>BUY A TICKET</span>
             <img src="/icons/tick1.svg" alt="" className='h-4 w-6'/>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

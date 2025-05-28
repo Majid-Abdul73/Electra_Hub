@@ -8,45 +8,53 @@ interface VotingEventProps {
   showTitle?: boolean;
 }
 
+// Export the events array so it can be imported in other components
+export const votingEvents = [
+  {
+    id: "vote-1",
+    title: "Miss Malaika",
+    image: "/images/malaika.jpg",
+    date: "12th December, 2024",
+    time: "16:00GMT",
+    venue: "National Event Centre",
+    location: "Greater Accra, Lakeside"
+  },
+  {
+    id: "vote-2",
+    title: "Miss Malaika",
+    image: "/images/malaika.jpg",
+    date: "12th December, 2024",
+    time: "16:00GMT",
+    venue: "National Event Centre",
+    location: "Greater Accra, Lakeside"
+  },
+  {
+    id: "vote-3",
+    title: "Miss Malaika",
+    image: "/images/malaika.jpg",
+    date: "12th December, 2024",
+    time: "16:00GMT",
+    venue: "National Event Centre",
+    location: "Greater Accra, Lakeside"
+  },
+  {
+    id: "vote-4",
+    title: "Miss Malaika",
+    image: "/images/malaika.jpg",
+    date: "12th December, 2024",
+    time: "16:00GMT",
+    venue: "National Event Centre",
+    location: "Greater Accra, Lakeside"
+  }
+];
+
 const VotingEvent: FC<VotingEventProps> = ({ 
   title = "Voting Events", 
   showTitle = true 
 }) => {
   const navigate = useNavigate();
-  const [events] = useState([
-    {
-      title: "Miss Malaika",
-      image: "/images/malaika.jpg",
-      date: "12th December, 2024",
-      time: "16:00GMT",
-      venue: "National Event Centre",
-      location: "Greater Accra, Lakeside"
-    },
-    {
-        title: "Miss Malaika",
-        image: "/images/malaika.jpg",
-        date: "12th December, 2024",
-        time: "16:00GMT",
-        venue: "National Event Centre",
-        location: "Greater Accra, Lakeside"
-      },
-      {
-        title: "Miss Malaika",
-        image: "/images/malaika.jpg",
-        date: "12th December, 2024",
-        time: "16:00GMT",
-        venue: "National Event Centre",
-        location: "Greater Accra, Lakeside"
-      },
-      {
-        title: "Miss Malaika",
-        image: "/images/malaika.jpg",
-        date: "12th December, 2024",
-        time: "16:00GMT",
-        venue: "National Event Centre",
-        location: "Greater Accra, Lakeside"
-      }
-  ]);
+  // Use the exported events array
+  const [events] = useState(votingEvents);
 
   const handleVote = () => {
     console.log('Vote button clicked');

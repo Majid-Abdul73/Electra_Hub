@@ -8,13 +8,31 @@ interface TicketingEventProps {
   showTitle?: boolean;
 }
 
-const TicketingEvent: FC<TicketingEventProps> = ({ 
-  title = "Ticketing Events", 
-  showTitle = true 
-}) => {
-  const navigate = useNavigate();
-  const [events] = useState([
-    {
+interface TicketingEvent {
+  id: string;
+  title: string;
+  image: string;
+  date: string;
+  time: string;
+  venue: string;
+  location: string;
+  price: string;
+}
+
+// Export the events array
+export const ticketingEvents: TicketingEvent[] = [
+  {
+    id: "ticket-1",
+    title: "The Beast Concert",
+    image: "/images/beast.jpg",
+    date: "12th December, 2024",
+    time: "16:00GMT",
+    venue: "National Event Centre",
+    location: "Greater Accra, Lakeside",
+    price: "$120"
+  },
+  {
+    id: "ticket-2",
       title: "The Beast Concert",
       image: "/images/beast.jpg",
       date: "12th December, 2024",
@@ -24,33 +42,33 @@ const TicketingEvent: FC<TicketingEventProps> = ({
       price: "$120"
     },
     {
-        title: "The Beast Concert",
-        image: "/images/beast.jpg",
-        date: "12th December, 2024",
-        time: "16:00GMT",
-        venue: "National Event Centre",
-        location: "Greater Accra, Lakeside",
-        price: "$120"
-      },
-      {
-        title: "The Beast Concert",
-        image: "/images/beast.jpg",
-        date: "12th December, 2024",
-        time: "16:00GMT",
-        venue: "National Event Centre",
-        location: "Greater Accra, Lakeside",
-        price: "$120"
-      },
-      {
-        title: "The Beast Concert",
-        image: "/images/beast.jpg",
-        date: "12th December, 2024",
-        time: "16:00GMT",
-        venue: "National Event Centre",
-        location: "Greater Accra, Lakeside",
-        price: "$120"
-      }
-  ]);
+      id: "ticket-3",
+      title: "The Beast Concert",
+      image: "/images/beast.jpg",
+      date: "12th December, 2024",
+      time: "16:00GMT",
+      venue: "National Event Centre",
+      location: "Greater Accra, Lakeside",
+      price: "$120"
+    },
+    {
+      id: "ticket-4",
+      title: "The Beast Concert",
+      image: "/images/beast.jpg",
+      date: "12th December, 2024",
+      time: "16:00GMT",
+      venue: "National Event Centre",
+      location: "Greater Accra, Lakeside",
+      price: "$120"
+    }
+];
+
+const TicketingEvent: FC<TicketingEventProps> = ({ 
+  title = "Ticketing Events", 
+  showTitle = true 
+}) => {
+  const navigate = useNavigate();
+  const [events] = useState(ticketingEvents);
 
   const handleBuyTicket = () => {
     console.log('Buy ticket button clicked');

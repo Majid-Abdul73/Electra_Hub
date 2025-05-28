@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 const Revolution: FC = () => {
   return (
@@ -32,10 +33,10 @@ const Revolution: FC = () => {
                 <span>Real-time Results</span>
               </li>
             </ul>
-            <button className="bg-black flex items-center text-white px-6 py-2 rounded-full gap-4 hover:bg-gray-800 transition-colors">
+            <Link to="/vote" className="bg-black flex items-center text-white px-6 py-2 rounded-full gap-4 hover:bg-gray-800 transition-colors">
               <img src="/icons/vote.svg" alt="Vote icon" className="w-5 h-5" />
               Once off Voting
-            </button>
+            </Link>
           </div>
 
           {/* Ticketing Section */}
@@ -58,10 +59,15 @@ const Revolution: FC = () => {
                 <span>Digital Wallet</span>
               </li>
             </ul>
-            <button className="flex items-center bg-white text-black px-6 py-2 gap-4 rounded-full hover:bg-gray-100 transition-colors">
+            <Link to="/ticket" className="flex items-center bg-white text-black px-6 py-2 gap-4 rounded-full hover:bg-gray-100 transition-colors">
               <img src="/icons/tick.svg" alt="Ticket icon" className="w-5 h-5" />
               Once off ticketing
-            </button>
+            </Link>
+
+            {/* <Link to="/tick" className="flex">
+            <img src="/icons/tick.svg" alt="Ticket icon" className="w-5 h-5" />
+            </Link> */}
+            
           </div>          
         </div>
 
@@ -112,7 +118,6 @@ const Revolution: FC = () => {
             Electra is your ultimate companion for a connected and convenient lifestyle. Designed to <br /> empower users with secure voting, seamless ticketing, and reliable rides, we are <br /> committed to making everyday tasks simpler. Whether you're expressing your choice, <br /> exploring events, or moving around, Electra has got you covered.
           </p>
         </div>
-      {/* .. */}
     </div>
   );
 };

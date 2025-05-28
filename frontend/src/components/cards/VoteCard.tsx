@@ -1,8 +1,10 @@
 import type { FC } from 'react';
 import { useState } from 'react';
+import { Link } from'react-router-dom';
 
 interface VoteCardProps {
   event: {
+    id: string;
     title: string;
     image: string;
     date: string;
@@ -39,7 +41,6 @@ const VoteCard: FC<VoteCardProps> = ({ event, onVote }) => {
       <div className="p-4">
         {/* Title and Bookmark */}
         <div className="flex justify-between items-center mb-1">
-          {/* <h3 className="text-lg font-medium">{event.title}</h3> */}
           <h3 className="text-xl font-semibold">{event.title}</h3>
           <button 
             onClick={() => setIsFavorite(!isFavorite)}
@@ -59,19 +60,18 @@ const VoteCard: FC<VoteCardProps> = ({ event, onVote }) => {
         </div>
         
         {/* Venue and Location */}
-          <div className='text-gray500 text-xl mb-'>{event.venue}</div>
-          <div className='text-gray-500 text-xs mb-4'>{event.location}</div>
-
+        <div className='text-gray500 text-xl mb-'>{event.venue}</div>
+        <div className='text-gray-500 text-xs mb-4'>{event.location}</div>
 
         {/* Vote Button */}
         <div className="mt-4">
-          <button 
+          <Link to={`/event/${event.id}`}
             onClick={onVote}
             className="flex w-full justify-center gap-4 bg-black text-white py-3 rounded-full font-medium text-sm"
           >
             BUY A VOTE
             <img src="/icons/vote1.svg" alt="" className='h-4 w-6'/>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

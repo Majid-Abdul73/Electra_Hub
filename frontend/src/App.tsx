@@ -11,11 +11,12 @@ const Purchase = lazy(() => import('./pages/Purchase'));
 
 const VotePage = lazy(() => import('./pages/VotePage'));
 const TicketPage = lazy(() => import('./pages/TicketPage'));
+const EventDetails = lazy(() => import('./pages/EventDetails'));
 
 // Loading spinner component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen">
-    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+    <div className="animate-spin rounded-full h-8 w-8 border-b-4 border-[#69D097]"></div>
   </div>
 );
 
@@ -33,6 +34,7 @@ function App() {
 
             <Route path="/vote" element={<VotePage />} />
             <Route path="/ticket" element={<TicketPage />} />
+            <Route path="/event/:id" element={<EventDetails />} />
           </Routes>
         </Suspense>
       </MainLayout>

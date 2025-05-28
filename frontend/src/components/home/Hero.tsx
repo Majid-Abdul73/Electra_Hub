@@ -20,6 +20,7 @@ const Hero: FC = () => {
               </div>
 
               <div>
+                <img src="/icons/youtube.svg" alt="" className='absolute w-10 h-10 m'/>
                 <img src="/icons/hero-image.svg" alt="" className='w-[250px] mt-1'/>
               </div>
             </div>

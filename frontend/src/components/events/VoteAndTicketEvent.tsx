@@ -1,51 +1,68 @@
 import type { FC } from 'react';
 import TicketVoteCard from '../cards/TicketVoteCard';
 
-const VoteAndTicketEvent: FC = () => {
-  // Dummy data for events
-  const events = [
-    {
-      title: "Detty Rave 2025",
-      image: "/images/detty-rave.jpg",
-      date: "12th December, 2024",
-      time: "16:00GMT",
-      venue: "National Event Centre",
-      location: "Greater Accra, Lakeside",
-      ticketPrice: 120,
-      originalPrice: 150
-    },
-    {
-        title: "Detty Rave 2025",
-        image: "/images/detty-rave.jpg",
-        date: "12th December, 2024",
-        time: "16:00GMT",
-        venue: "National Event Centre",
-        location: "Greater Accra, Lakeside",
-        ticketPrice: 120,
-        originalPrice: 150
-      },
-      {
-        title: "Detty Rave 2025",
-        image: "/images/detty-rave.jpg",
-        date: "12th December, 2024",
-        time: "16:00GMT",
-        venue: "National Event Centre",
-        location: "Greater Accra, Lakeside",
-        ticketPrice: 120,
-        originalPrice: 150
-      },
-      {
-        title: "Detty Rave 2025",
-        image: "/images/detty-rave.jpg",
-        date: "12th December, 2024",
-        time: "16:00GMT",
-        venue: "National Event Centre",
-        location: "Greater Accra, Lakeside",
-        ticketPrice: 120,
-        originalPrice: 150
-      }
-  ];
+interface VoteTicketEvent {
+  id: string;
+  title: string;
+  image: string;
+  date: string;
+  time: string;
+  venue: string;
+  location: string;
+  ticketPrice: number;
+  originalPrice: number;
+}
 
+// Export the events array
+export const voteTicketEvents: VoteTicketEvent[] = [
+  {
+    id: "vote-ticket-1",
+    title: "Detty Rave 2025",
+    image: "/images/detty-rave.jpg",
+    date: "12th December, 2024",
+    time: "16:00GMT",
+    venue: "National Event Centre",
+    location: "Greater Accra, Lakeside",
+    ticketPrice: 120,
+    originalPrice: 150
+  },
+  {
+    id: "vote-ticket-2",
+    title: "Detty Rave 2025",
+    image: "/images/detty-rave.jpg",
+    date: "12th December, 2024",
+    time: "16:00GMT",
+    venue: "National Event Centre",
+    location: "Greater Accra, Lakeside",
+    ticketPrice: 120,
+    originalPrice: 150
+  },
+  {
+    id: "vote-ticket-3",
+    title: "Detty Rave 2025",
+    image: "/images/detty-rave.jpg",
+    date: "12th December, 2024",
+    time: "16:00GMT",
+    venue: "National Event Centre",
+    location: "Greater Accra, Lakeside",
+    ticketPrice: 120,
+    originalPrice: 150
+  },
+  {
+    id: "vote-ticket-4",
+    title: "Detty Rave 2025",
+    image: "/images/detty-rave.jpg",
+    date: "12th December, 2024",
+    time: "16:00GMT",
+    venue: "National Event Centre",
+    location: "Greater Accra, Lakeside",
+    ticketPrice: 120,
+    originalPrice: 150
+  }
+];
+
+const VoteAndTicketEvent: FC = () => {
+  const events = voteTicketEvents;
   const handleBuyTicket = () => {
     // Implement ticket purchase logic
     console.log('Buying ticket...');
