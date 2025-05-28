@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import { votingEvents } from '../components/events/VotingEvent';
 import { ticketingEvents } from '../components/events/TicketingEvent';
 import { voteTicketEvents } from '../components/events/VoteAndTicketEvent';
+import BuyTicketModal from '../components/modals/BuyTicketModal';
+import BuyVoteModal from '../components/modals/BuyVoteModal';
 
 interface Event {
   id: string;
@@ -27,12 +29,13 @@ const EventDetails: FC = () => {
   const { id } = useParams<{ id: string }>();
   const [event, setEvent] = useState<Event | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isVoteModalOpen, setIsVoteModalOpen] = useState(false);
+  const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
 
   useEffect(() => {
     // fetch event data using the id
     const fetchEvent = async () => {
       try {
-        // Find the event by ID in all event types
         // Find the voting event by ID
         const votingEvent = votingEvents.find((event: typeof votingEvents[0]) => event.id === id);
         const ticketingEvent = ticketingEvents.find((event: typeof ticketingEvents[0]) => event.id === id);
@@ -41,7 +44,6 @@ const EventDetails: FC = () => {
         let eventData: Event | null = null;
         
         if (votingEvent) {
-          // Transform the voting event to match the Event interface
           eventData = {
             id: votingEvent.id,
             title: votingEvent.title,
@@ -59,7 +61,6 @@ const EventDetails: FC = () => {
             }
           };
         } else if (ticketingEvent) {
-          // Transform the ticketing event to match the Event interface
           eventData = {
             id: ticketingEvent.id,
             title: ticketingEvent.title,
@@ -134,7 +135,7 @@ const EventDetails: FC = () => {
 
               {/* Back Button */}
               <button className="mb-6" onClick={() => window.history.back()}>
-                <img src="/icons/arrow-left.svg" alt="Back" className="w-6 h-6" />
+                <img src="/icons/back.svg" alt="Back" className="w-6 h-6" />
               </button>
             </div>
 
@@ -151,13 +152,13 @@ const EventDetails: FC = () => {
 
               {/* Description */}
               <div className='bg-[#FAFAFA] p-8 rounded-xl'>
-                  <div className="mb-6 border-b-2">
+                  <div className="mb-6 border-b-2 pb-20">
                     <h1 className="text-3xl font-bold mb-2">{event.title}</h1>
                     <p className="text-gray-600">{event.description}</p>
                   </div>
 
                   {/* Read More Button */}
-                  <div className="text-start flex gap-4 items-center">
+                  <div className="text-start flex gap-4 items-center pt-10">
                     <button className="bg-black text-white py-2 px-6 rounded-full hover:bg-gray-200">
                       Read More
                     </button>
@@ -190,16 +191,47 @@ const EventDetails: FC = () => {
                 {/* Action Buttons */}
                 <div className="flex gap-4 mb-6">
                   {(event.type === 'ticketing' || event.type === 'both') && (
-                    <button className="bg-[#69D097] text-white py-2 px-2 rounded-full flex items-center justify-center gap-2">
+                    <button 
+                      onClick={() => setIsTicketModalOpen(true)}
+                      className="bg-[#69D097] text-white py-2 px-2 rounded-full flex items-center justify-center gap-2"
+                    >
                       <span className='text-s'>BUY A TICKET</span>
                       <img src="/icons/ticket.svg" alt="" className="w-5 h-5" />
                     </button>
                   )}
+                
+                  {event && (
+                    <BuyTicketModal
+                      isOpen={isTicketModalOpen}
+                      onClose={() => setIsTicketModalOpen(false)}
+                      eventDetails={{
+                        title: event.title,
+                        description: event.description,
+                        image: event.image
+                      }}
+                    />
+                  )}
                   {(event.type === 'voting' || event.type === 'both') && (
-                    <button className="bg-[#69D097] text-white py-2 px-2 rounded-full flex items-center justify-center gap-2">
+                    <button 
+                      onClick={() => setIsVoteModalOpen(true)}
+                      className="bg-[#69D097] text-white py-2 px-2 rounded-full flex items-center justify-center gap-2"
+                    >
                       <span>BUY A VOTE</span>
-                      <img src="/icons/vote.svg" alt="{}" className="w-5 h-5" />
+                      <img src="/icons/vote.svg" alt="" className="w-5 h-5" />
                     </button>
+                  )}
+                
+                  {event && (
+                    <BuyVoteModal
+                      isOpen={isVoteModalOpen}
+                      onClose={() => setIsVoteModalOpen(false)}
+                      voteDetails={{
+                        title: event.title,
+                        description: event.description,
+                        price: 10, // a default price or get from the event data
+                        image: event.image
+                      }}
+                    />
                   )}
                 </div>
 

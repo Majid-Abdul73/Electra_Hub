@@ -21,11 +21,13 @@ const BuyVoteModal: FC<BuyVoteModalProps> = ({ isOpen, onClose, voteDetails }) =
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg w-full max-w-md overflow-y-auto max-h-[90vh]">
+      {/* <div className="bg-white rounded-lg w-full max-w-md overflow-y-auto max-h-[90vh]"> */}
+      <div className="bg-white rounded-lg w-full max-w-md overflow-y-auto max-h-[90vh] scrollbar-hide">
+
         <div className="relative">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white text-2xl"
+            className="absolute w-20 top-4 right-4 text-2xl"
           >
             ×
           </button>
@@ -48,30 +50,47 @@ const BuyVoteModal: FC<BuyVoteModalProps> = ({ isOpen, onClose, voteDetails }) =
 
           <div className="mb-4">
             <p className="text-sm mb-2">For Bulk Votes click here</p>
-            <div className="grid grid-cols-1 gap-2">
-              <button className="bg-black text-white rounded-full py-2">100 VOTES FOR $1000</button>
-              <button className="bg-black text-white rounded-full py-2">100 VOTES FOR $1000</button>
-              <button className="bg-black text-white rounded-full py-2">100 VOTES FOR $1000</button>
+            <div className="flex gap-2 text-xs">
+              <button className="bg-black text-white rounded-lg p-1">100 VOTES FOR $1000</button>
+              <button className="bg-black text-white rounded-lg p-1">100 VOTES FOR $1000</button>
+              <button className="bg-black text-white rounded-lg p-1">100 VOTES FOR $1000</button>
             </div>
           </div>
 
-          <div className="mb-4">
-            <p className="font-semibold mb-2">Choose Payment Mode</p>
-            <div className="space-y-2">
-              <button className="w-full p-2 border rounded-lg flex items-center gap-2">
-                <img src="/stripe-logo.png" alt="Stripe" className="h-6" />
-                Pay with Stripe
+          {/* Payment Methods */}
+          <div className="mb-6">
+            <h3 className="font-medium mb-3">Choose Payment Mode</h3>
+            <div className="space-y-3">
+              <button className="w-full p-2 py-4 border rounded-lg flex items-center justify-between gap-2 hover:bg-gray-50">
+                <div className='flex gap-2'>
+                  <img src="/icons/stripe.svg" alt="Stripe" className="h-6" />
+                  <span>Pay with Stripe</span>
+                </div>
+                <div className='w-4 h-4 bg-slate-200 rounded-full'> </div>
               </button>
-              <button className="w-full p-2 border rounded-lg flex items-center gap-2">
-                <img src="/mobile-money-logo.png" alt="Mobile Money" className="h-6" />
-                Pay with Mobile Money
+
+              <button className="w-full p-2 py-4 border rounded-lg flex items-center justify-between gap-2 hover:bg-gray-50">
+                <div className='flex gap-2'>
+                  <img src="/icons/mtn.svg" alt="Mobile Money" className="h-6" />
+                  <img src="/icons/telecel.svg" alt="Mobile Money" className="h-6" />
+                  <img src="/icons/at.svg" alt="Mobile Money" className="h-6" />
+                  <span>Pay with Mobile Money</span>
+                </div>
+                <div>
+                  <div className='w-4 h-4 bg-slate-200 rounded-full'> </div>
+                </div>
               </button>
-              <button className="w-full p-2 border rounded-lg flex items-center gap-2">
-                <img src="/paypal-logo.png" alt="PayPal" className="h-6" />
-                Pay with PayPal
+
+              <button className="w-full p-2 py-4 border rounded-lg flex items-center justify-between gap-2 hover:bg-gray-50">
+                <div className='flex gap-2'>
+                  <img src="/icons/PayPal.svg" alt="PayPal" className="h-6" />
+                  <span>Pay with PayPal</span>
+                </div>
+                <div className='w-4 h-4 bg-slate-200 rounded-full'> </div>
               </button>
             </div>
           </div>
+
 
           <div className="mb-4">
             <p className="font-semibold mb-2">Name & Contact Information</p>
